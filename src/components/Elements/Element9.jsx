@@ -16,7 +16,7 @@ const Element9 = () => {
         <div className="col-md-6">
           <div className="element9-content">
             <h3 className="element9-subheading">Advanced Deepfake Detection</h3>
-            <img src="/Assests/Line 13.png" alt="Icon" className="img-fluidn11" />
+            <img src="/assets/Line 13.png" alt="Icon" className="img-fluidn11" />
             <p className="element9-subparagraph">
               Identify AI-generated videos and images with industry-leading accuracy.
             </p>
@@ -26,7 +26,7 @@ const Element9 = () => {
         <div className="col-md-6">
           <div className="element9-content">
             <h3 className="element9-subheading">Cheap Fake Detection</h3>
-            <img src="/Assests/Line 13.png" alt="Icon" className="img-fluidn11" />
+            <img src="/assets/Line 13.png" alt="Icon" className="img-fluidn11" />
             <p className="element9-subparagraph">
               Detect simple media manipulations, such as speed changes and image distortions.
             </p>
@@ -38,7 +38,7 @@ const Element9 = () => {
         <div className="col-md-6">
           <div className="element9-content">
             <h3 className="element9-subheading">Real-Time Analysis</h3>
-            <img src="/Assests/Line 13.png" alt="Icon" className="img-fluidn11" />
+            <img src="/assets/Line 13.png" alt="Icon" className="img-fluidn11" />
             <p className="element9-subparagraph">
               Instantly verify content authenticity and prevent the spread of misinformation.
             </p>
@@ -48,7 +48,7 @@ const Element9 = () => {
         <div className="col-md-6">
           <div className="element9-content">
             <h3 className="element9-subheading">Privacy & Security</h3>
-            <img src="/Assests/Line 13.png" alt="Icon" className="img-fluidn11" />
+            <img src="/assets/Line 13.png" alt="Icon" className="img-fluidn11" />
             <p className="element9-subparagraph">
               Ensure data protection while analyzing content for deepfake manipulation.
             </p>

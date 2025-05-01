@@ -18,7 +18,7 @@ const CElement1 = () => {
         {/* Call Us */}
         <div className="col-md-4">
           <div className="celement2-content">
-            <img src="/Assests/phone-2.png" alt="Call Icon" className="img-fluidh" />
+            <img src="/assets/phone-2.png" alt="Call Icon" className="img-fluidh" />
             <div>
               <h3 className="celement2-subheading">Call us</h3>
               <p className="celement2-subparagraph">
@@ -32,7 +32,7 @@ const CElement1 = () => {
         {/* Email Us */}
         <div className="col-md-4">
           <div className="celement2-content">
-            <img src="/Assests/Icon (4).png" alt="Email Icon" className="img-fluidh" />
+            <img src="/assets/Icon (4).png" alt="Email Icon" className="img-fluidh" />
             <div>
               <h3 className="celement2-subheading">Email us</h3>
               <p className="celement2-subparagraph">

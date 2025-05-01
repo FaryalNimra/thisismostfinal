@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="row align-items-center">
           {/* Logo Section */}
           <div className="col-md-3 col-lg-2 logo-box">
-            <img src="\Assests\footerimage.png" alt="Logo" className="logo-image" /><br></br>
+            <img src="\assets\footerimage.png" alt="Logo" className="logo-image" /><br></br>
             {/* ✅ Social Media Links Below the Logo */}
             <div className="social-icons">
               <a href="https://www.linkedin.com/company/fake-catcher-ai-deepfake-and-cheapfake-detector/" target="_blank" rel="noopener noreferrer">

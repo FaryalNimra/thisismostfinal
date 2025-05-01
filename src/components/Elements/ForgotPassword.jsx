@@ -59,7 +59,7 @@ const ForgotPassword = () => {
         <div
           className="register-left"
           style={{
-            backgroundImage: "url('/Assests/eye-4453129_1280.jpg')",
+            backgroundImage: "url('/assets/eye-4453129_1280.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

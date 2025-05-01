@@ -47,7 +47,7 @@ const CheapFake = () => {
           {/* Scenario 1 - Elon Musk Crypto Scam */}
           <div className="col-lg-4 col-md-6">
             <div className="scenario-box">
-              <img src="/Assests/Elon Musk.png" alt="Elon Musk Crypto Scam" className="scenario-image" /><br></br>
+              <img src="/assets/Elon Musk.png" alt="Elon Musk Crypto Scam" className="scenario-image" /><br></br>
               <h4 className="scenario-title">Elon Musk Crypto Scam (2021)</h4>
               <p className="scenario-text">A cheap fake deepfake of Elon Musk promoting a crypto scam misled thousands.</p>
               {expanded !== 1 && <div className="learn-more" onClick={() => handleLearnMore(1)}>Learn More</div>}
@@ -63,7 +63,7 @@ const CheapFake = () => {
           {/* Scenario 2 - Ronaldo Investment Scam */}
           <div className="col-lg-4 col-md-6">
             <div className="scenario-box">
-              <img src="/Assests/Cristiano.png" alt="Cristiano Ronaldo Scam" className="scenario-image" /><br></br>
+              <img src="/assets/Cristiano.png" alt="Cristiano Ronaldo Scam" className="scenario-image" /><br></br>
               <h4 className="scenario-title">Cristiano Ronaldo Scam (2022)</h4>
               <p className="scenario-text">A fake video of Ronaldo endorsing a fraudulent investment scheme misled his fans.</p>
               {expanded !== 2 && <div className="learn-more" onClick={() => handleLearnMore(2)}>Learn More</div>}
@@ -79,7 +79,7 @@ const CheapFake = () => {
           {/* Scenario 3 - Tom Cruise Magic Trick */}
           <div className="col-lg-4 col-md-6">
             <div className="scenario-box">
-              <img src="/Assests/Tom cruises.png" alt="Tom Cruise Deepfake" className="scenario-image" />
+              <img src="/assets/Tom cruises.png" alt="Tom Cruise Deepfake" className="scenario-image" />
               <h4 className="scenario-title">Tom Cruise Magic Tricks (2023)</h4>
               <p className="scenario-text">A viral AI-generated video of Tom Cruise performing magic tricks confused millions.</p>
               {expanded !== 3 && <div className="learn-more" onClick={() => handleLearnMore(3)}>Learn More</div>}
@@ -95,7 +95,7 @@ const CheapFake = () => {
           {/* Scenario 4 - Fake News Anchor */}
           <div className="col-lg-4 col-md-6">
             <div className="scenario-box">
-              <img src="/Assests/men-reading-newspaper-isolated-white-background.jpg" alt="Fake News Anchor" className="scenario-image" />
+              <img src="/assets/men-reading-newspaper-isolated-white-background.jpg" alt="Fake News Anchor" className="scenario-image" />
               <h4 className="scenario-title">Fake News Anchor (2023)</h4>
               <p className="scenario-text">A deepfake of a news anchor spreading false war news created mass panic.</p>
               {expanded !== 4 && <div className="learn-more" onClick={() => handleLearnMore(4)}>Learn More</div>}
@@ -111,7 +111,7 @@ const CheapFake = () => {
           {/* Scenario 5 - Shah Rukh Khan Political Fake */}
           <div className="col-lg-4 col-md-6">
             <div className="scenario-box">
-              <img src="/Assests/Shahruk Khan.png" alt="SRK Political Deepfake" className="scenario-image" />
+              <img src="/assets/Shahruk Khan.png" alt="SRK Political Deepfake" className="scenario-image" />
               <h4 className="scenario-title">Shah Rukh Political Fake (2024)</h4>
               <p className="scenario-text">A manipulated deepfake of SRK supporting a political party sparked controversy.</p>
               {expanded !== 5 && <div className="learn-more" onClick={() => handleLearnMore(5)}>Learn More</div>}

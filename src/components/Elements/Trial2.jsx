@@ -59,39 +59,57 @@ const Trial2 = () => {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
       <h1
         style={{
           textAlign: "center",
           marginTop: "80px",
-          marginBottom: "50px",
-          fontSize: "30px",
+          marginBottom: "30px",
+          fontSize: "32px",
           fontWeight: "bold",
-          color: "#333",
+          color: "#1e3a8a",
         }}
       >
-        Upload Image and Generate Heatmap
+         Generate a Heatmap from your Image
       </h1>
 
-      <form onSubmit={handleSubmit} style={{ textAlign: "center", marginBottom: "40px" }}>
+      <p
+        style={{
+          textAlign: "center",
+          fontSize: "16px",
+          color: "#555",
+          marginBottom: "40px",
+        }}
+      >
+        Our AI will highlight manipulated areas in your uploaded image. Just upload and analyze!
+      </p>
+
+      <form
+        onSubmit={handleSubmit}
+        style={{ textAlign: "center", marginBottom: "40px" }}
+      >
         <input
           type="file"
           onChange={handleFileChange}
           style={{
-            padding: "8px",
+            padding: "12px",
             fontSize: "16px",
             marginBottom: "20px",
             width: "90%",
-            maxWidth: "300px",
+            maxWidth: "320px",
+            borderRadius: "8px",
+            border: "2px solid #1e3a8a",
+            backgroundColor: "#f9f9f9",
+            cursor: "pointer",
           }}
         />
         <br />
         <button
           type="submit"
           style={{
-            padding: "10px 20px",
+            padding: "12px 24px",
             fontSize: "16px",
-            backgroundColor: "#4CAF50",
+            backgroundColor: "#1e3a8a",
             color: "white",
             border: "none",
             borderRadius: "5px",
@@ -103,91 +121,115 @@ const Trial2 = () => {
         </button>
       </form>
 
-      {loading && <p style={{ textAlign: "center" }}>Loading...</p>}
+      {loading && (
+        <p style={{ textAlign: "center" }}>Processing image, please wait...</p>
+      )}
 
-      {errorMessage && <p style={{ color: "red", textAlign: "center" }}>{errorMessage}</p>}
+      {errorMessage && (
+        <p style={{ color: "red", textAlign: "center" }}>{errorMessage}</p>
+      )}
 
       {originalImageUrl && heatmapImageUrl && (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "stretch",
-            flexWrap: "wrap",
-            gap: "20px",
-            margin: "0 auto",
-            marginTop: "40px",
-            width: "100%",
-            maxWidth: "1200px",
-          }}
-        >
-          {/* Original Image Container */}
+        <div style={{ textAlign: "center" }}>
           <div
             style={{
-              flex: "1 1 300px",
-              textAlign: "center",
-              border: "3px solid #4CAF50",
-              borderRadius: "15px",
-              padding: "20px",
-              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-              minWidth: "280px",
-              maxWidth: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "stretch",
+              flexWrap: "wrap",
+              gap: "20px",
+              marginTop: "40px",
+              maxWidth: "1200px",
+              margin: "0 auto",
             }}
           >
-            <img
-              src={originalImageUrl}
-              alt="Original"
+            {/* Original Image */}
+            <div
               style={{
-                width: "100%",
-                height: "auto",
-                maxHeight: "360px",
-                borderRadius: "10px",
-                objectFit: "cover",
-              }}
-            />
-            <p
-              style={{
-                marginTop: "15px",
-                fontWeight: "bold",
-                fontSize: "18px",
+                flex: "1 1 300px",
+                border: "3px solid #4CAF50",
+                borderRadius: "15px",
+                padding: "20px",
+                textAlign: "center",
+                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
               }}
             >
-              Your Original Image
-            </p>
+              <img
+                src={originalImageUrl}
+                alt="Original"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxHeight: "360px",
+                  borderRadius: "10px",
+                  objectFit: "cover",
+                }}
+              />
+              <p
+                style={{
+                  marginTop: "15px",
+                  fontWeight: "bold",
+                  fontSize: "18px",
+                }}
+              >
+                Original Image
+              </p>
+            </div>
+
+            {/* Heatmap Image */}
+            <div
+              style={{
+                flex: "1 1 300px",
+                border: "3px solid #FF5733",
+                borderRadius: "15px",
+                padding: "20px",
+                textAlign: "center",
+                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <img
+                src={heatmapImageUrl}
+                alt="Heatmap"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxHeight: "360px",
+                  borderRadius: "10px",
+                  objectFit: "cover",
+                }}
+              />
+              <p
+                style={{
+                  marginTop: "15px",
+                  fontWeight: "bold",
+                  fontSize: "18px",
+                }}
+              >
+                Generated Heatmap
+              </p>
+            </div>
           </div>
 
-          {/* Heatmap Container */}
+          {/* Explanation */}
           <div
             style={{
-              flex: "1 1 300px",
-              textAlign: "center",
-              border: "3px solid #FF5733",
-              borderRadius: "15px",
-              padding: "20px",
-              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-              minWidth: "280px",
-              maxWidth: "100%",
+              marginTop: "30px",
+              maxWidth: "800px",
+              marginLeft: "auto",
+              marginRight: "auto",
             }}
           >
-            <img
-              src={heatmapImageUrl}
-              alt="Heatmap"
-              style={{
-                width: "100%",
-                height: "auto",
-                maxHeight: "360px",
-                borderRadius: "10px",
-                objectFit: "cover",
-              }}
-            />
-            <p
-              style={{
-                marginTop: "15px",
-                fontWeight: "bold",
-                fontSize: "18px",
-              }}
-            >
-              Your Heatmap
+            <p style={{ fontSize: "16px", color: "#444", lineHeight: "1.6" }}>
+              The heatmap highlights regions in the image that the AI model
+              associates with potential deepfake manipulation.{" "}
+              <span style={{ color: "#e74c3c", fontWeight: "bold" }}>Red</span>{" "}
+              and{" "}
+              <span style={{ color: "#f39c12", fontWeight: "bold" }}>
+                orange
+              </span>{" "}
+              areas indicate zones with higher suspicious activity. These
+              visual cues help identify facial features or artifacts often
+              modified in fake media generation.
             </p>
           </div>
         </div>

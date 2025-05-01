@@ -45,7 +45,7 @@ const About4 = () => {
           {/* Scenario 1 */}
           <div className="col-lg-4 col-md-12">
             <div className="scenario-box">
-              <img src="/Assests/Obama.png" alt="Obama Deepfake" className="scenario-image" />
+              <img src="/assets/Obama.png" alt="Obama Deepfake" className="scenario-image" />
               <h4 className="scenario-title">Obama Deepfake (2018)</h4>
               <p className="scenario-text">
                 A digitally altered video of Barack Obama demonstrated the potential risks of AI-generated misinformation.
@@ -65,7 +65,7 @@ const About4 = () => {
           {/* Scenario 2 */}
           <div className="col-lg-4 col-md-12">
             <div className="scenario-box">
-              <img src="/Assests/Fakedrake.png" alt="Fake Drake" className="scenario-image" />
+              <img src="/assets/Fakedrake.png" alt="Fake Drake" className="scenario-image" />
               <h4 className="scenario-title">Fake Drake Song (2019)</h4>
               <p className="scenario-text">
                 A deepfake of Drake performing an unauthorized song sparked discussions about AI misuse in the music industry.
@@ -85,7 +85,7 @@ const About4 = () => {
           {/* Scenario 3 */}
           <div className="col-lg-4 col-md-12">
             <div className="scenario-box">
-              <img src="/Assests/Vote.png" alt="Deepfake Election" className="scenario-image" /><br></br>
+              <img src="/assets/Vote.png" alt="Deepfake Election" className="scenario-image" /><br></br>
               <h4 className="scenario-title">Deepfake in Elections (2020)</h4>
               <p className="scenario-text">
                 Fake political videos spread misinformation, raising concerns about digital security and media integrity.

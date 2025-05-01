@@ -12,23 +12,23 @@ const NElement2 = () => {
             <div className="nelement2-heading">For 1 licence <br></br>$49/ month</div>
            
             <div className="d-flex align-items-center mb-3">
-              <img src="/Assests/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
+              <img src="/assets/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
               <p className="nelement2-paragraph">Commercial License</p>
             </div>
             <div className="d-flex align-items-center mb-3">
-              <img src="/Assests/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
+              <img src="/assets/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
               <p className="nelement2-paragraph">100+ HTML UI Elements</p>
             </div>
             <div className="d-flex align-items-center mb-3">
-              <img src="/Assests/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
+              <img src="/assets/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
               <p className="nelement2-paragraph">Unlimited Domain Support</p>
             </div>
             <div className="d-flex align-items-center mb-3">
-              <img src="/Assests/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
+              <img src="/assets/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
               <p className="nelement2-paragraph">6 Month Premium Support</p>
             </div>
             <div className="d-flex align-items-center mb-3">
-              <img src="/Assests/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
+              <img src="/assets/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
               <p className="nelement2-paragraph">Lifetime Updates</p>
             </div>
           </div>
@@ -43,23 +43,23 @@ const NElement2 = () => {
             <div className="nelement2-heading">For 3 licence <br></br>$44/ month</div>
       
             <div className="d-flex align-items-center mb-3">
-              <img src="/Assests/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
+              <img src="/assets/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
               <p className="nelement2-paragraph">Commercial License</p>
             </div>
             <div className="d-flex align-items-center mb-3">
-              <img src="/Assests/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
+              <img src="/assets/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
               <p className="nelement2-paragraph">100+ HTML UI Elements</p>
             </div>
             <div className="d-flex align-items-center mb-3">
-              <img src="/Assests/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
+              <img src="/assets/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
               <p className="nelement2-paragraph">Unlimited Domain Support</p>
             </div>
             <div className="d-flex align-items-center mb-3">
-              <img src="/Assests/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
+              <img src="/assets/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
               <p className="nelement2-paragraph">6 Month Premium Support</p>
             </div>
             <div className="d-flex align-items-center mb-3">
-              <img src="/Assests/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
+              <img src="/assets/Group 162.png" alt="Icon" className="img-fluid1 mr-3" />
               <p className="nelement2-paragraph">Lifetime Updates</p>
             </div>
           </div>

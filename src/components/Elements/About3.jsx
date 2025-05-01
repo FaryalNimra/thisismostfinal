@@ -8,7 +8,7 @@ const About3 = () => {
     <div 
       className="how-it-works-container" 
       style={{
-        background: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/Assests/Deepfake4.jpeg') no-repeat center center",
+        background: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/Deepfake4.jpeg') no-repeat center center",
         backgroundSize: "cover",
         padding: "80px 0"
       }}

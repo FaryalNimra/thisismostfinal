@@ -12,7 +12,7 @@ const Element4 = () => {
           <iframe 
             width="100%" 
             height="300" 
-            src="/Assests/trevor_sesli.mp4" // Replace with actual video link
+            src="/assets/trevor_sesli.mp4" // Replace with actual video link
             title="Fake Catcher AI Tool Demo"
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 

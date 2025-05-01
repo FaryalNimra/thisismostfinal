@@ -133,7 +133,7 @@ const Trial = () => {
             !file ? (
               <div className="video-preview">
                 <video width="100%" height="100%" controls autoPlay style={{ marginTop: "25px" }}>
-                  <source src="/Assests/trevor_sesli.mp4" type="video/mp4" />
+                  <source src="/assets/trevor_sesli.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
 
@@ -187,7 +187,7 @@ const Trial = () => {
                     <p style={{ marginBottom: '10px' }}>
                       <strong>View More:</strong> 
                       <a 
-                        href="/Assests/Deepfakes_vs_Cheapfakes_Guide.pdf" 
+                        href="/assets/Deepfakes_vs_Cheapfakes_Guide.pdf" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         style={{ color: 'yellow', textDecoration: 'underline' }}

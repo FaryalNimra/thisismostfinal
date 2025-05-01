@@ -15,7 +15,7 @@ const Element51 = () => {
           <button className="btn btn-primary btn-left-align">Get a demo now</button>
         </div>
         <div className="col-md-6 d-flex justify-content-center align-items-center">
-          <img src="/Assests/Img.png" alt="Laptop" className="img-fluid" />
+          <img src="/assets/Img.png" alt="Laptop" className="img-fluid" />
         </div>
       </div>
     </div>
