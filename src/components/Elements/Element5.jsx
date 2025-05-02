@@ -17,7 +17,7 @@ const Element5 = () => {
           </a>
         </div>
         <div className="col-md-6 order-1 order-md-2 d-flex justify-content-center align-items-center">
-          <img src="/assets/Deepfake4.jpeg" alt="AI Tool" className="img-fluidhf" />
+          <img src="/assets/Deepfake4.png" alt="AI Tool" className="img-fluidhf" />
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ const About2 = () => {
           {/* Left Side - Image */}
           <div className="col-lg-6 col-md-12 text-center">
             <img
-              src="/assets/About2.jpg"
+              src="/assets/About2.png"
               alt="About Us"
               className="about2-image"
             />

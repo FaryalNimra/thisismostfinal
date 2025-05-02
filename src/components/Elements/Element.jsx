@@ -6,7 +6,7 @@ const Element = () => {
   const navigate = useNavigate(); // Initialize useNavigate hook
 
   const containerStyle = {
-    backgroundImage: "url('/assets/fg.jpeg')",
+    backgroundImage: "url('/assets/fg.png')",
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     display: 'flex',

@@ -133,7 +133,7 @@ const Trial = () => {
             !file ? (
               <div className="video-preview">
                 <video width="100%" height="100%" controls autoPlay style={{ marginTop: "25px" }}>
-                  <source src="/assets/trevor_sesli.mp4" type="video/mp4" />
+                  <source src="/assets/trevor_sesli.webm" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
 

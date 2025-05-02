@@ -24,7 +24,7 @@ const Header = () => {
       <header className="header">
         <div className="header-wrapper" style={headerStyle}>
           <Link to="/" className="logo1">
-            <img src="\assets\logo1.png" alt="logo1" className="logo-image1" />
+            <img src="\assets\logo.png" alt="logo1" className="logo-image1" />
           </Link>
           <nav className="navbar navbar-expand-lg">
             <button

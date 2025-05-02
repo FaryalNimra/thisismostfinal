@@ -33,7 +33,7 @@ const About = () => {
 
           {/* Right Side - Image */}
           <div className="col-lg-6 col-md-12 text-center">
-            <img src="/assets/About1.jpg" alt="Deepfake Detection Tool - FakeCatcher AI" className="about-image" />
+            <img src="/assets/About1.png" alt="Deepfake Detection Tool - FakeCatcher AI" className="about-image" />
           </div>
         </div>
       </div>
