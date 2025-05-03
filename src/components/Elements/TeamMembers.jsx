@@ -26,7 +26,7 @@ const teamData = [
     id: 3,
     name: "Maham Nadeem",
     role: "Deep Learning Specialist",
-    image: "/assets/Member3.png",
+    image: "/assets/Member3.jpg",
     bgColor: "#e0f7fa",
     facebook: "https://www.facebook.com/profile.php?id=61574791244051",
     linkedin: "www.linkedin.com/in/maham-nadeem-070275267",

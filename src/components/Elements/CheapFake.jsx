@@ -95,7 +95,7 @@ const CheapFake = () => {
           {/* Scenario 4 - Fake News Anchor */}
           <div className="col-lg-4 col-md-6">
             <div className="scenario-box">
-              <img src="/assets/men-reading-newspaper-isolated-white-background.png" alt="Fake News Anchor" className="scenario-image" />
+              <img src="/assets/men-reading-newspaper-isolated-white-background.jpg" alt="Fake News Anchor" className="scenario-image" />
               <h4 className="scenario-title">Fake News Anchor (2023)</h4>
               <p className="scenario-text">A deepfake of a news anchor spreading false war news created mass panic.</p>
               {expanded !== 4 && <div className="learn-more" onClick={() => handleLearnMore(4)}>Learn More</div>}
