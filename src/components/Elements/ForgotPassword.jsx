@@ -79,7 +79,7 @@ const ForgotPassword = () => {
           <form className="register-form" onSubmit={handleSubmit}>
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder="Enter email"
               className="form-control mt-3"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -88,7 +88,7 @@ const ForgotPassword = () => {
 
             <input
               type="password"
-              placeholder="Enter your new password"
+              placeholder="Enter new password"
               className="form-control mt-3"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
@@ -97,7 +97,7 @@ const ForgotPassword = () => {
 
             <input
               type="password"
-              placeholder="Confirm your new password"
+              placeholder="Confirm new password"
               className="form-control mt-3"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}

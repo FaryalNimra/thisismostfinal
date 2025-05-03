@@ -129,7 +129,7 @@ const Register = () => {
             <div className="password-field mt-3">
               <input
                 type={passwordVisible ? "text" : "password"}
-                placeholder="Enter your password"
+                placeholder="Enter password"
                 className="form-control"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
