@@ -78,7 +78,7 @@ const Register = () => {
         <div
           className="register-left"
           style={{
-            backgroundImage: "url('/assets/eye-4453129_1280.png')",
+            backgroundImage: "url('/assets/eye-4453129_1280.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

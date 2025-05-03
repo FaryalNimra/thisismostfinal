@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaWhatsapp, FaEnvelope, FaFacebook } from 'react-icons/fa'; // Importing Icons
-import './CElement1.scss'; // Ensure the path is correct
+import { FaWhatsapp, FaEnvelope, FaFacebook, FaPhone } from 'react-icons/fa';
+import './CElement1.scss';
 
 const CElement1 = () => {
   return (
@@ -13,16 +13,16 @@ const CElement1 = () => {
         </p>
       </div>
 
-      {/* 3 Divs in One Row */}
       <div className="row contact-row">
         {/* Call Us */}
         <div className="col-md-4">
           <div className="celement2-content">
-            <img src="/assets/phone-2.png" alt="Call Icon" className="img-fluidh" />
             <div>
               <h3 className="celement2-subheading">Call us</h3>
               <p className="celement2-subparagraph">
+                <FaPhone style={{ marginRight: '8px', color: '#23329b' }} />
                 <a href="tel:+923026130237">+92-302-6130237</a><br />
+                <FaPhone style={{ marginRight: '8px', color: '#23329b' }} />
                 <a href="tel:+923369629878">+92-336-9629878</a>
               </p>
             </div>
@@ -32,24 +32,23 @@ const CElement1 = () => {
         {/* Email Us */}
         <div className="col-md-4">
           <div className="celement2-content">
-            <img src="/assets/Icon (4).png" alt="Email Icon" className="img-fluidh" />
             <div>
               <h3 className="celement2-subheading">Email us</h3>
               <p className="celement2-subparagraph">
+                <FaEnvelope style={{ marginRight: '8px', color: '#23329b' }} />
                 <a href="mailto:fakecatcherai@gmail.com">fakecatcherai@gmail.com</a><br />
+                <FaEnvelope style={{ marginRight: '8px', color: '#23329b' }} />
                 <a href="mailto:catcheraifake@gmail.com">catcheraifake@gmail.com</a>
               </p>
             </div>
           </div>
         </div>
 
-        {/* Social Media Links (Instead of Address) */}
+        {/* Social Media */}
         <div className="col-md-4">
           <div className="celement2-content">
             <div>
               <h3 className="celement2-subheading">Follow us</h3>
-              
-              {/* Social Links with React Icons */}
               <div className="social-links">
                 <a href="https://wa.me/+923026130237" target="_blank" rel="noopener noreferrer">
                   <FaWhatsapp className="social-icon whatsapp" />
@@ -61,11 +60,9 @@ const CElement1 = () => {
                   <FaFacebook className="social-icon facebook" />
                 </a>
               </div>
-
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
