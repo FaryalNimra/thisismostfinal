@@ -29,6 +29,16 @@ import matplotlib.pyplot as plt
 
 from dotenv import load_dotenv
 load_dotenv()  # Ye line environment variables ko load karegi
+import tensorflow as tf
+
+# Set memory growth (GPU ke liye, agar GPU available hai)
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+    try:
+        tf.config.experimental.set_memory_growth(gpus[0], True)
+    except RuntimeError as e:
+        print(e)
+
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
