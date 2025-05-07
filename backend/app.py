@@ -6,6 +6,7 @@ from torchvision import models, transforms
 from PIL import Image
 from huggingface_hub import hf_hub_download  # Make sure this import is included
 import os
+from pymongo import MongoClient
 from mtcnn import MTCNN  
 import cv2
 from flask_bcrypt import generate_password_hash, check_password_hash
@@ -193,7 +194,10 @@ def generate_heatmap_api():
 
 
 # MongoDB connection
-client = MongoClient('mongodb+srv://fakecatcherai:sX_W9!SUigNS.ww@cluster0.pwyazjb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+import os  # Add this at the top of your file if it's not already there
+
+mongo_url = os.environ.get("MONGO_URI")
+client = MongoClient(mongo_url)
 db = client['fakecatcherDB']
 users_collection = db['users']
 contacts_collection = db['contacts']
