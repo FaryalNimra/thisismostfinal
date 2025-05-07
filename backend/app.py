@@ -27,6 +27,8 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+from dotenv import load_dotenv
+load_dotenv()  # Ye line environment variables ko load karegi
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -39,21 +41,39 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 UPLOAD_FOLDER = "static/uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-# Load Model Function
+
+# Model ko Hugging Face se load karne ka function
 def load_model_from_hf(repo_id, filename, num_classes):
-    model_path = hf_hub_download(repo_id=repo_id, filename=filename)
+    # Hugging Face API token (agar use kar rahe ho)
+    hf_api_token = os.getenv("HF_API_TOKEN")  # Render ke environment se token milega
+    
+    # Model ko Hugging Face se download karna
+    model_path = hf_hub_download(repo_id=repo_id, filename=filename, use_auth_token=hf_api_token)
+    
     model = models.convnext_tiny(weights=None)
     in_features = model.classifier[2].in_features
     model.classifier[2] = nn.Linear(in_features, num_classes)
-    model.load_state_dict(torch.load(model_path, map_location=device))
-    model.to(device)
-    model.eval()
+    model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
+    model.eval()  # Model ko evaluation mode mein daalna
     return model
 
-# Load Models
-deepfake_model = load_model_from_hf("faryalnimra/DFDC-detection-model", "DFDC.pth", 2)  
-cheapfake_model = load_model_from_hf("faryalnimra/ORIG-TAMP", "ORIG-TAMP.pth", 1)
-realfake_model = load_model_from_hf("faryalnimra/RealFake", "real_fake.pth", 1)  # New model added (only loaded, not used)
+
+
+# New model added (only loaded, not used)
+# Models ko load karte waqt environment variables ka use karna
+deepfake_model = load_model_from_hf(
+    repo_id=os.getenv("HF_DEEPFAKE_REPO_ID"),  # Deepfake model ka repo
+    filename="DFDC.pth",  # Model ka file naam
+    num_classes=2  # Deepfake model ke liye 2 classes hain
+)
+
+cheapfake_model = load_model_from_hf(
+    repo_id=os.getenv("HF_CHEAPFAKE_REPO_ID"),  # Cheapfake model ka repo
+    filename="ORIG-TAMP.pth",  # Model ka file naam
+    num_classes=1  # Cheapfake model ke liye 1 class hai
+)
+
+
 
 # Image Preprocessing
 transform = transforms.Compose([
