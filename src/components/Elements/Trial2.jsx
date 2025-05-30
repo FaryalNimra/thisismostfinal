@@ -36,6 +36,9 @@ const Trial2 = () => {
     formData.append("file", image);
 
     setLoading(true);
+    setErrorMessage("");
+    setOriginalImageUrl("");
+    setHeatmapImageUrl("");
 
     try {
       const response = await fetch("http://localhost:5000/generate_heatmap", {
@@ -48,11 +51,13 @@ const Trial2 = () => {
       if (response.ok) {
         setOriginalImageUrl(data.original_image_url);
         setHeatmapImageUrl(data.heatmap_image_url);
+        setErrorMessage("");
       } else {
-        console.error("Error:", data.error);
+        setErrorMessage(data.error || "Failed to generate heatmap.");
       }
     } catch (error) {
-      console.error("Error:", error);
+      setErrorMessage("An error occurred while processing the image.");
+      console.error(error);
     }
 
     setLoading(false);
@@ -70,7 +75,7 @@ const Trial2 = () => {
           color: "#1e3a8a",
         }}
       >
-         Generate a Heatmap from your Image
+        Generate a Heatmap from your Image
       </h1>
 
       <p
@@ -138,7 +143,7 @@ const Trial2 = () => {
               alignItems: "stretch",
               flexWrap: "wrap",
               gap: "20px",
-              marginTop: "40px",
+              marginTop: "20px",
               maxWidth: "1200px",
               margin: "0 auto",
             }}
@@ -210,26 +215,44 @@ const Trial2 = () => {
             </div>
           </div>
 
-          {/* Explanation */}
+          {/* Detailed Color Explanation */}
           <div
             style={{
               marginTop: "30px",
               maxWidth: "800px",
               marginLeft: "auto",
               marginRight: "auto",
+              textAlign: "left",
+              fontSize: "16px",
+              color: "#444",
+              lineHeight: "1.6",
             }}
           >
-            <p style={{ fontSize: "16px", color: "#444", lineHeight: "1.6" }}>
-              The heatmap highlights regions in the image that the AI model
-              associates with potential deepfake manipulation.{" "}
-              <span style={{ color: "#e74c3c", fontWeight: "bold" }}>Red</span>{" "}
-              and{" "}
-              <span style={{ color: "#f39c12", fontWeight: "bold" }}>
-                orange
-              </span>{" "}
-              areas indicate zones with higher suspicious activity. These
-              visual cues help identify facial features or artifacts often
-              modified in fake media generation.
+            <p>
+              This heatmap is generated using a Grad-CAM technique applied to our AI deepfake detection model. It highlights regions in the image that contributed most to the model's prediction of manipulation.
+            </p>
+            <p>
+              <strong>Color Legend:</strong>
+            </p>
+            <ul>
+              <li>
+                <span style={{ color: "#e74c3c", fontWeight: "bold" }}>Red</span>: Highest model attention and suspicion, indicating regions most likely manipulated.
+              </li>
+              <li>
+                <span style={{ color: "#f39c12", fontWeight: "bold" }}>Orange</span>: Moderate suspicion, possibly manipulated areas.
+              </li>
+              <li>
+                <span style={{ color: "#f1c40f", fontWeight: "bold" }}>Yellow</span>: Low to moderate attention, less suspicious.
+              </li>
+              <li>
+                <span style={{ color: "#3498db", fontWeight: "bold" }}>Blue</span>: Minimal model attention, unlikely manipulated.
+              </li>
+              <li>
+                <span style={{ color: "#27ae60", fontWeight: "bold" }}>Green</span>: Areas considered normal with very low suspicion.
+              </li>
+            </ul>
+            <p>
+              This visualization helps you understand which parts of the image the AI flagged as suspicious, with warmer colors indicating higher likelihood of manipulation.
             </p>
           </div>
         </div>

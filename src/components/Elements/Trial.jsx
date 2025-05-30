@@ -5,6 +5,7 @@ const Trial = () => {
   const [file, setFile] = useState(null);
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [predictionType, setPredictionType] = useState("real_vs_fake");
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -28,12 +29,15 @@ const Trial = () => {
     setLoading(true);
     const formData = new FormData();
     formData.append("file", file);
+    formData.append("prediction_type", predictionType);
+
     try {
       const response = await fetch("http://127.0.0.1:5000/predict", {
         method: "POST",
         body: formData,
       });
       const data = await response.json();
+      console.log("API Response:", data);  // <-- Log API response for debugging
       setResult(data);
     } catch (error) {
       console.error("Upload failed", error);
@@ -42,7 +46,6 @@ const Trial = () => {
     }
   };
 
-  // --- Spinner animation ---
   const spinningAnimation = `
     @keyframes spin {
       0% { transform: rotate(0deg); }
@@ -56,25 +59,23 @@ const Trial = () => {
     justifyContent: "center",
     alignItems: "center",
     height: "100%",
-    marginTop: "100px",
+    marginTop: "50px",
   };
 
-  // --- New Spinner Style with width and gradient lines ---
   const spinnerStyle = {
-    border: "12px solid #e0e0e0", // Light gray background ring
-    borderTop: "12px solid #00bcd4", // Neon Cyan gradient effect
-    borderRight: "12px solid #ff4081", // Added secondary color for stylish effect
-    borderBottom: "12px solid #7e57c2", // Soft purple line
+    border: "12px solid #e0e0e0",
+    borderTop: "12px solid #00bcd4",
+    borderRight: "12px solid #ff4081",
+    borderBottom: "12px solid #7e57c2",
     borderRadius: "50%",
-    width: "140px", // Increased width for larger spinner
-    height: "140px", // Increased height for better visibility
+    width: "140px",
+    height: "140px",
     animation: "spin 1s linear infinite",
     margin: "20px",
   };
 
-  // --- Drag & Drop zone dynamic style ---
   const dragDropZoneStyle = {
-    background: file ? "linear-gradient(45deg, #8e9eab, #c7e4e8)" : "#ffffff", // Green gradient on file drop
+    background: file ? "linear-gradient(45deg, #8e9eab, #c7e4e8)" : "#ffffff",
     border: "2px dashed #aaa",
     padding: "40px",
     borderRadius: "12px",
@@ -96,7 +97,28 @@ const Trial = () => {
       <div className="trial-content">
         <div className="left-section">
           <h1 className="trial-heading">Image Forgery Detection</h1>
-          <p className="trial-paragraph">Upload an image to detect if it's a Deepfake or Cheapfake.</p>
+          <p className="trial-paragraph">Upload an image and choose detection type:</p>
+
+          {/* Dropdown for prediction type */}
+          <div style={{ marginBottom: "20px" }}>
+            <label htmlFor="prediction-type" style={{ fontWeight: "bold" }}>
+              Prediction Type:
+            </label>
+            <select
+              id="prediction-type"
+              value={predictionType}
+              onChange={(e) => setPredictionType(e.target.value)}
+              style={{
+                marginLeft: "10px",
+                padding: "8px",
+                borderRadius: "5px",
+                border: "1px solid #aaa",
+              }}
+            >
+              <option value="real_vs_fake">Real vs Fake</option>
+              <option value="deepfake_vs_cheapfake">Deepfake vs Cheapfake</option>
+            </select>
+          </div>
 
           <div
             className="drag-drop-zone"
@@ -129,75 +151,92 @@ const Trial = () => {
               <div style={spinnerStyle}></div>
               <div style={loadingTextStyle}>Please wait while your image is uploading...</div>
             </div>
+          ) : !file ? (
+            <div className="video-preview">
+              <video width="100%" height="100%" controls autoPlay muted loop>
+                <source src="/assets/trevor_sesli.webm" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <p
+                className="demo-text"
+                style={{ color: "red", fontSize: "20px", marginTop: "5px" }}
+              >
+                Use this demo video to understand how deepfake works.
+              </p>
+            </div>
           ) : (
-            !file ? (
-              <div className="video-preview">
-                <video width="100%" height="100%" controls autoPlay style={{ marginTop: "25px" }}>
-                  <source src="/assets/trevor_sesli.webm" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-
-                <p className="demo-text" style={{ color: "red", fontSize: "20px", marginTop: "5px" }}>
-                  Use this Demo video to understand how the tool works
-                </p>
-              </div>
-            ) : (
-              result && (
+            result && (
+              <div
+                className="trial-result"
+                style={{
+                  opacity: result ? 1 : 0,
+                  background: "linear-gradient(45deg, #ff9e50, #fbc2d5)",
+                  color: "#fff",
+                  borderRadius: "10px",
+                  padding: "20px",
+                  marginTop: "20px",
+                  transform: "translateY(-30px)",
+                  animation: "slideIn 0.5s ease-out forwards",
+                }}
+              >
                 <div
-                  className="trial-result"
+                  className="result-heading"
                   style={{
-                    opacity: result ? 1 : 0,
-                    background: 'linear-gradient(45deg, #ff9e50, #fbc2d5)',
-                    color: '#fff',
-                    borderRadius: '10px',
-                    padding: '20px',
-                    marginTop: '20px',
-                    transform: 'translateY(-30px)',
-                    animation: 'slideIn 0.5s ease-out forwards',
+                    fontSize: "1.5rem",
+                    fontWeight: "bold",
+                    marginBottom: "15px",
                   }}
                 >
-                  <div
-                    className="result-heading"
-                    style={{
-                      fontSize: '1.5rem',
-                      fontWeight: 'bold',
-                      marginBottom: '15px',
-                    }}
-                  >
-                    Detection Result
-                  </div>
-                  <div
-                    className="result-details"
-                    style={{
-                      fontSize: '1rem',
-                      color: '#f1f1f1',
-                    }}
-                  >
-                    <p style={{ marginBottom: '10px' }}>
-                      <strong>Status:</strong> <span className="fake-type" style={{ fontWeight: 'bold', color: 'red' }}>{result.prediction}</span>
-                    </p>
-                    <p style={{ marginBottom: '10px' }}>
-                      <strong>Fake Type:</strong> <span className="fake-type" style={{ fontWeight: 'bold', color: 'red' }}>{result.fake_type}</span>
-                    </p>
-                    <p style={{ marginBottom: '10px' }}><strong>Deepfake Models Confidence:</strong> {result.deepfake_confidence_before}</p>
-                    <p style={{ marginBottom: '10px' }}><strong>Final Prediction:</strong> {Math.min(parseFloat(result.deepfake_confidence_adjusted), 99.5).toFixed(2)}%</p>
-                    <p style={{ marginBottom: '10px' }}><strong>Cheapfake Models Confidence:</strong> {result.cheapfake_confidence_before}</p>
-                    <p style={{ marginBottom: '10px' }}><strong>Final Prediction:</strong> {result.cheapfake_confidence_adjusted}</p>
-                    <p style={{ marginBottom: '10px' }}><strong>Faces Detected:</strong> {result.faces_detected}</p>
-                    <p style={{ marginBottom: '10px' }}>
-                      <strong>View More:</strong> 
-                      <a 
-                        href="/assets/Deepfakes_vs_Cheapfakes_Guide.pdf" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        style={{ color: 'yellow', textDecoration: 'underline' }}
-                      >
-                        Click on link
-                      </a>
-                    </p>
-                  </div>
+                  Detection Result
                 </div>
-              )
+                <div className="result-details" style={{ fontSize: "1rem", color: "#f1f1f1" }}>
+                  {predictionType === "real_vs_fake" ? (
+                    <>
+                      <p>
+                        <strong>Status:</strong>{" "}
+                        <span style={{ fontWeight: "bold", color: "red" }}>
+                          {result.prediction || "N/A"}
+                        </span>
+                      </p>
+                      <p>
+                        <strong>Faces Detected:</strong>{" "}
+                        {result.faces_detected !== undefined ? result.faces_detected : "No data"}
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p>
+                        <strong>Fake Type:</strong>{" "}
+                        <span style={{ fontWeight: "bold", color: "red" }}>
+                          {result.fake_type}
+                        </span>
+                      </p>
+                      <p>
+                        <strong>Deepfake Confidence:</strong>{" "}
+                        {Math.min(parseFloat(result.deepfake_confidence_adjusted), 99.5).toFixed(2)}%
+                      </p>
+                      <p>
+                        <strong>Cheapfake Confidence:</strong> {result.cheapfake_confidence_adjusted}
+                      </p>
+                       <p>
+                        <strong>Faces Detected:</strong>{" "}
+                        {result.faces_detected !== undefined ? result.faces_detected : "No data"}
+                      </p>
+                    </>
+                  )}
+                  <p>
+                    <strong>View More:</strong>{" "}
+                    <a
+                      href="/assets/Deepfakes_vs_Cheapfakes_Guide.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "yellow", textDecoration: "underline" }}
+                    >
+                      Click on link
+                    </a>
+                  </p>
+                </div>
+              </div>
             )
           )}
         </div>
