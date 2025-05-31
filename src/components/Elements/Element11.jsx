@@ -52,7 +52,7 @@ const Element11 = () => {
   };
 
   return (
-    <div className="element11-container d-flex align-items-center justify-content-center">
+    <div className="element11-container d-flex align-items-center justify-content-center" style={{ height: containerHeight }}>
       <div className="container">
         <div className="row align-items-center">
           {/* Left Side - Testimonial Text */}
@@ -87,7 +87,12 @@ const Element11 = () => {
 
           {/* Right Side - Profile Picture */}
           <div className="col-4 d-none d-md-block text-right">
-            <img src={testimonials[index].image} alt="Profile" className="testimonial-image img-fluid rounded-circle" />
+            <img
+              src={testimonials[index].image}
+              alt="Profile"
+              className="testimonial-image img-fluid rounded-circle"
+              loading="lazy"  // <-- Lazy loading added here
+            />
           </div>
         </div>
       </div>

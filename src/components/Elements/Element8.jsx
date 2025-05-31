@@ -1,5 +1,5 @@
 import React from 'react';
-import './Element8.scss'; // Ensure the path is correct
+import './Element8.scss';
 
 const Element8 = () => {
   return (
@@ -17,7 +17,7 @@ const Element8 = () => {
         <div className="col-md-4 col-sm-12 mb-4">
           <div className="element8-content">
             <div className="d-flex align-items-center justify-content-center">
-              <img src="/assets/Icon.png" alt="Icon" className="img-fluidn" />
+              <img src="/assets/Icon.png" alt="Icon" className="img-fluidn" loading="lazy" />
               <h3 className="element8-subheading">AI-Powered</h3>
             </div>
             <p className="element8-subparagraph">
@@ -28,7 +28,7 @@ const Element8 = () => {
         <div className="col-md-4 col-sm-12 mb-4">
           <div className="element8-content">
             <div className="d-flex align-items-center justify-content-center">
-              <img src="/assets/Icon (1).png" alt="Icon" className="img-fluidn" />
+              <img src="/assets/Icon (1).png" alt="Icon" className="img-fluidn" loading="lazy" />
               <h3 className="element8-subheading">Real-Time Analysis</h3>
             </div>
             <p className="element8-subparagraph">
@@ -39,7 +39,7 @@ const Element8 = () => {
         <div className="col-md-4 col-sm-12 mb-4">
           <div className="element8-content">
             <div className="d-flex align-items-center justify-content-center">
-              <img src="/assets/Icon (2).png" alt="Icon" className="img-fluidn" />
+              <img src="/assets/Icon (2).png" alt="Icon" className="img-fluidn" loading="lazy" />
               <h3 className="element8-subheading">Privacy-Focused</h3>
             </div>
             <p className="element8-subparagraph">

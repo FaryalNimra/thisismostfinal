@@ -48,7 +48,12 @@ const TeamMembers = () => {
               style={{ backgroundColor: member.bgColor }}
             >
               <div className="team-img-wrapper">
-                <img src={member.image} alt={member.name} className="team-img" />
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="team-img"
+                  loading="lazy"  // lazy load added here
+                />
                 <div className="team-info">
                   <h3 className="team-name">{member.name}</h3>
                   <p className="team-role">{member.role}</p>

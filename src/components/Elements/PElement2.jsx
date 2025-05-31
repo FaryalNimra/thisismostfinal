@@ -15,7 +15,7 @@ const PElement2 = () => {
         <div className="col-md-4">
           <div className="element8h-content">
             <div className="d-flex align-items-center">
-              <img src="/assets/preferences-circle.png" alt="Icon" className="img-fluidn" />
+              <img src="/assets/preferences-circle.png" alt="Icon" className="img-fluidn" loading="lazy" />
               <h3 className="element8h-subheading">Fast Detection</h3>
             </div>
             <p className="element8h-subparagraph">
@@ -26,7 +26,7 @@ const PElement2 = () => {
         <div className="col-md-4">
           <div className="element8h-content">
             <div className="d-flex align-items-center">
-              <img src="/assets/ic_shopping_cart_48px.png" alt="Icon" className="img-fluidn" />
+              <img src="/assets/ic_shopping_cart_48px.png" alt="Icon" className="img-fluidn" loading="lazy" />
               <h3 className="element8h-subheading">Deepfake Identification</h3>
             </div>
             <p className="element8h-subparagraph">
@@ -37,7 +37,7 @@ const PElement2 = () => {
         <div className="col-md-4">
           <div className="element8h-content">
             <div className="d-flex align-items-center">
-              <img src="/assets/coupon.png" alt="Icon" className="img-fluidn" />
+              <img src="/assets/coupon.png" alt="Icon" className="img-fluidn" loading="lazy" />
               <h3 className="element8h-subheading">Cheap Fake Detection</h3>
             </div>
             <p className="element8h-subparagraph">
@@ -50,7 +50,7 @@ const PElement2 = () => {
         <div className="col-md-4">
           <div className="element8h-content">
             <div className="d-flex align-items-center">
-              <img src="/assets/ic_layers_48px.png" alt="Icon" className="img-fluidn" />
+              <img src="/assets/ic_layers_48px.png" alt="Icon" className="img-fluidn" loading="lazy" />
               <h3 className="element8h-subheading">Comprehensive Analysis</h3>
             </div>
             <p className="element8h-subparagraph">
@@ -61,7 +61,7 @@ const PElement2 = () => {
         <div className="col-md-4">
           <div className="element8h-content">
             <div className="d-flex align-items-center">
-              <img src="/assets/preferences-circle.png" alt="Icon" className="img-fluidn" />
+              <img src="/assets/preferences-circle.png" alt="Icon" className="img-fluidn" loading="lazy" />
               <h3 className="element8h-subheading">User-Friendly Reports</h3>
             </div>
             <p className="element8h-subparagraph">
@@ -72,7 +72,7 @@ const PElement2 = () => {
         <div className="col-md-4">
           <div className="element8h-content">
             <div className="d-flex align-items-center">
-              <img src="/assets/preferences-circle.png" alt="Icon" className="img-fluidn" />
+              <img src="/assets/preferences-circle.png" alt="Icon" className="img-fluidn" loading="lazy" />
               <h3 className="element8h-subheading">Real-Time Monitoring</h3>
             </div>
             <p className="element8h-subparagraph">

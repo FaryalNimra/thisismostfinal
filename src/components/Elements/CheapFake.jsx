@@ -15,7 +15,6 @@ const CheapFake = () => {
         {/* Main Heading */}
         <h2 className="section-title">Cheap Fake Real Words Scams&Incidents</h2>
 
-
         <div className="incident-row">
           <marquee className="incident-marquee" scrollamount="6">
             <BsExclamationTriangleFill className="alert-icon" />
@@ -24,8 +23,6 @@ const CheapFake = () => {
           </marquee>
         </div>
 
-       
-        
         <div className="incident-row">
           <marquee className="incident-marquee" scrollamount="6">
             <BsExclamationTriangleFill className="alert-icon" />
@@ -47,14 +44,31 @@ const CheapFake = () => {
           {/* Scenario 1 - Elon Musk Crypto Scam */}
           <div className="col-lg-4 col-md-6">
             <div className="scenario-box">
-              <img src="/assets/Elon Musk.webp" alt="Elon Musk Crypto Scam" className="scenario-image" /><br></br>
+              <img
+                src="/assets/Elon Musk.webp"
+                alt="Elon Musk Crypto Scam"
+                className="scenario-image"
+                loading="lazy"
+              />
+              <br />
               <h4 className="scenario-title">Elon Musk Crypto Scam (2021)</h4>
-              <p className="scenario-text">A cheap fake deepfake of Elon Musk promoting a crypto scam misled thousands.</p>
-              {expanded !== 1 && <div className="learn-more" onClick={() => handleLearnMore(1)}>Learn More</div>}
+              <p className="scenario-text">
+                A cheap fake deepfake of Elon Musk promoting a crypto scam misled thousands.
+              </p>
+              {expanded !== 1 && (
+                <div className="learn-more" onClick={() => handleLearnMore(1)}>
+                  Learn More
+                </div>
+              )}
               {expanded === 1 && (
                 <div className="expanded-text">
-                  <p>This poorly edited deepfake used old video clips with AI-generated voice to trick investors.</p>
-                  <div className="close-text" onClick={() => handleLearnMore(1)}>Close</div>
+                  <p>
+                    This poorly edited deepfake used old video clips with AI-generated voice to trick
+                    investors.
+                  </p>
+                  <div className="close-text" onClick={() => handleLearnMore(1)}>
+                    Close
+                  </div>
                 </div>
               )}
             </div>
@@ -63,14 +77,31 @@ const CheapFake = () => {
           {/* Scenario 2 - Ronaldo Investment Scam */}
           <div className="col-lg-4 col-md-6">
             <div className="scenario-box">
-              <img src="/assets/Cristiano.webp" alt="Cristiano Ronaldo Scam" className="scenario-image" /><br></br>
+              <img
+                src="/assets/Cristiano.webp"
+                alt="Cristiano Ronaldo Scam"
+                className="scenario-image"
+                loading="lazy"
+              />
+              <br />
               <h4 className="scenario-title">Cristiano Ronaldo Scam (2022)</h4>
-              <p className="scenario-text">A fake video of Ronaldo endorsing a fraudulent investment scheme misled his fans.</p>
-              {expanded !== 2 && <div className="learn-more" onClick={() => handleLearnMore(2)}>Learn More</div>}
+              <p className="scenario-text">
+                A fake video of Ronaldo endorsing a fraudulent investment scheme misled his fans.
+              </p>
+              {expanded !== 2 && (
+                <div className="learn-more" onClick={() => handleLearnMore(2)}>
+                  Learn More
+                </div>
+              )}
               {expanded === 2 && (
                 <div className="expanded-text">
-                  <p>The deepfake had poor lip-syncing but still fooled many fans into investing in a scam.</p>
-                  <div className="close-text" onClick={() => handleLearnMore(2)}>Close</div>
+                  <p>
+                    The deepfake had poor lip-syncing but still fooled many fans into investing in a
+                    scam.
+                  </p>
+                  <div className="close-text" onClick={() => handleLearnMore(2)}>
+                    Close
+                  </div>
                 </div>
               )}
             </div>
@@ -79,14 +110,30 @@ const CheapFake = () => {
           {/* Scenario 3 - Tom Cruise Magic Trick */}
           <div className="col-lg-4 col-md-6">
             <div className="scenario-box">
-              <img src="/assets/Tom cruises.webp" alt="Tom Cruise Deepfake" className="scenario-image" />
+              <img
+                src="/assets/Tom cruises.webp"
+                alt="Tom Cruise Deepfake"
+                className="scenario-image"
+                loading="lazy"
+              />
               <h4 className="scenario-title">Tom Cruise Magic Tricks (2023)</h4>
-              <p className="scenario-text">A viral AI-generated video of Tom Cruise performing magic tricks confused millions.</p>
-              {expanded !== 3 && <div className="learn-more" onClick={() => handleLearnMore(3)}>Learn More</div>}
+              <p className="scenario-text">
+                A viral AI-generated video of Tom Cruise performing magic tricks confused millions.
+              </p>
+              {expanded !== 3 && (
+                <div className="learn-more" onClick={() => handleLearnMore(3)}>
+                  Learn More
+                </div>
+              )}
               {expanded === 3 && (
                 <div className="expanded-text">
-                  <p>The deepfake was part of an experiment showing how easily celebrities can be faked.</p>
-                  <div className="close-text" onClick={() => handleLearnMore(3)}>Close</div>
+                  <p>
+                    The deepfake was part of an experiment showing how easily celebrities can be
+                    faked.
+                  </p>
+                  <div className="close-text" onClick={() => handleLearnMore(3)}>
+                    Close
+                  </div>
                 </div>
               )}
             </div>
@@ -95,14 +142,27 @@ const CheapFake = () => {
           {/* Scenario 4 - Fake News Anchor */}
           <div className="col-lg-4 col-md-6">
             <div className="scenario-box">
-              <img src="/assets/men-reading-newspaper-isolated-white-background.webp" alt="Fake News Anchor" className="scenario-image" />
+              <img
+                src="/assets/men-reading-newspaper-isolated-white-background.webp"
+                alt="Fake News Anchor"
+                className="scenario-image"
+                loading="lazy"
+              />
               <h4 className="scenario-title">Fake News Anchor (2023)</h4>
-              <p className="scenario-text">A deepfake of a news anchor spreading false war news created mass panic.</p>
-              {expanded !== 4 && <div className="learn-more" onClick={() => handleLearnMore(4)}>Learn More</div>}
+              <p className="scenario-text">
+                A deepfake of a news anchor spreading false war news created mass panic.
+              </p>
+              {expanded !== 4 && (
+                <div className="learn-more" onClick={() => handleLearnMore(4)}>
+                  Learn More
+                </div>
+              )}
               {expanded === 4 && (
                 <div className="expanded-text">
                   <p>The fake broadcast was designed to manipulate public opinion and create chaos.</p>
-                  <div className="close-text" onClick={() => handleLearnMore(4)}>Close</div>
+                  <div className="close-text" onClick={() => handleLearnMore(4)}>
+                    Close
+                  </div>
                 </div>
               )}
             </div>
@@ -111,14 +171,27 @@ const CheapFake = () => {
           {/* Scenario 5 - Shah Rukh Khan Political Fake */}
           <div className="col-lg-4 col-md-6">
             <div className="scenario-box">
-              <img src="/assets/Shahruk Khan.webp" alt="SRK Political Deepfake" className="scenario-image" />
+              <img
+                src="/assets/Shahruk Khan.webp"
+                alt="SRK Political Deepfake"
+                className="scenario-image"
+                loading="lazy"
+              />
               <h4 className="scenario-title">Shah Rukh Political Fake (2024)</h4>
-              <p className="scenario-text">A manipulated deepfake of SRK supporting a political party sparked controversy.</p>
-              {expanded !== 5 && <div className="learn-more" onClick={() => handleLearnMore(5)}>Learn More</div>}
+              <p className="scenario-text">
+                A manipulated deepfake of SRK supporting a political party sparked controversy.
+              </p>
+              {expanded !== 5 && (
+                <div className="learn-more" onClick={() => handleLearnMore(5)}>
+                  Learn More
+                </div>
+              )}
               {expanded === 5 && (
                 <div className="expanded-text">
                   <p>The fake video was edited to look like an official endorsement, misleading millions.</p>
-                  <div className="close-text" onClick={() => handleLearnMore(5)}>Close</div>
+                  <div className="close-text" onClick={() => handleLearnMore(5)}>
+                    Close
+                  </div>
                 </div>
               )}
             </div>

@@ -138,3 +138,23 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .login-container {
+    height: auto;
+
+    .login-box {
+      flex-direction: column;
+
+      .login-left {
+        display: none;
+      }
+
+      .login-right {
+        flex: none;
+        width: 100%;
+        padding: 20px 30px;
+        margin-top: 20px;
+      }
+    }
+  }
+}

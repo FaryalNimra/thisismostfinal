@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Element5.scss'; // Ensure the path is correct
-import { GoArrowRight } from 'react-icons/go'; // Import GoArrowRight icon
+import './Element5.scss';
+import { GoArrowRight } from 'react-icons/go';
 
 const Element5 = () => {
   return (
@@ -17,7 +17,12 @@ const Element5 = () => {
           </a>
         </div>
         <div className="col-md-6 order-1 order-md-2 d-flex justify-content-center align-items-center">
-          <img src="/assets/Deepfake4.png" alt="AI Tool" className="img-fluidhf" />
+          <img
+            src="/assets/Deepfake4.png"
+            alt="AI Tool"
+            className="img-fluidhf"
+            loading="lazy"  // <-- lazy loading enabled here
+          />
         </div>
       </div>
     </div>

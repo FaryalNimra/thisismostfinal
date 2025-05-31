@@ -14,12 +14,13 @@ const About2 = () => {
     <div className="about2-container">
       <div className="container">
         <div className="row align-items-center">
-          {/* Left Side - Image */}
+          {/* Left Side - Image with Lazy Loading */}
           <div className="col-lg-6 col-md-12 text-center">
             <img
               src="/assets/About2.webp"
               alt="About Us"
               className="about2-image"
+              loading="lazy"
             />
           </div>
 

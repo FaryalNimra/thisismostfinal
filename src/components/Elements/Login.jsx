@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaGoogle, FaApple, FaEye, FaEyeSlash } from "react-icons/fa";
 import axios from "axios";
-import Swal from "sweetalert2"; // ✅ Import SweetAlert2
+import Swal from "sweetalert2";
 import "./Login.scss";
 
 const Login = () => {
@@ -20,7 +20,6 @@ const Login = () => {
         password,
       });
 
-      // ✅ Show SweetAlert2 success popup
       Swal.fire({
         icon: "success",
         title: "Login Successful",
@@ -29,14 +28,12 @@ const Login = () => {
         showConfirmButton: false,
       });
 
-      // ✅ Navigate after 2 seconds
       setTimeout(() => {
         navigate("/Product");
       }, 2000);
     } catch (error) {
       console.error(error.response?.data);
 
-      // ❌ Show SweetAlert2 error popup
       Swal.fire({
         icon: "error",
         title: "Login Failed",
@@ -51,13 +48,36 @@ const Login = () => {
         {/* Left Side */}
         <div
           className="login-left"
-          style={{
-            backgroundImage: "url('/assets/eye-4453129_1280.webp')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          style={{ position: "relative", overflow: "hidden" }}
         >
-          <h2>Welcome Back!<br /> Log in to Continue</h2>
+          <img
+            src="/assets/eye-4453129_1280.webp"
+            alt="Background"
+            loading="lazy"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              zIndex: 0,
+            }}
+          />
+
+          <h2
+            style={{
+              position: "absolute",
+              bottom: "30px",
+              left: "60px",
+              color: "#23329B",
+              margin: 0,
+              lineHeight: "1.2",
+              fontWeight: "bold",
+            }}
+          >
+            Welcome Back!<br /> Log in to Continue
+          </h2>
         </div>
 
         {/* Right Side */}
@@ -91,9 +111,9 @@ const Login = () => {
               </span>
             </div>
 
-            <button type="submit" className="btn btn-primary w-100 mt-3">Log In</button>
-
-            
+            <button type="submit" className="btn btn-primary w-100 mt-3">
+              Log In
+            </button>
           </form>
 
           <div className="forgot-password mt-3">

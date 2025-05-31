@@ -1,16 +1,25 @@
-
-import React from "react";
-import './About3.scss'; // Ensure the path is correct
-import { FaRobot, FaSearch, FaCogs } from 'react-icons/fa'; // Importing icons from react-icons
+import React, { useEffect, useState } from "react";
+import './About3.scss';
+import { FaRobot, FaSearch, FaCogs } from 'react-icons/fa';
 
 const About3 = () => {
+  const [bgImage, setBgImage] = useState(null);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = '/assets/Deepfake4.png';
+    img.onload = () => {
+      setBgImage("linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/Deepfake4.png') no-repeat center center");
+    };
+  }, []);
+
   return (
-    <div 
-      className="how-it-works-container" 
+    <div
+      className="how-it-works-container"
       style={{
-        background: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/Deepfake4.png') no-repeat center center",
+        background: bgImage || "#23329B", // fallback color until image loads
         backgroundSize: "cover",
-        padding: "80px 0"
+        padding: "80px 0",
       }}
     >
       <div className="container">

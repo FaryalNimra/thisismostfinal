@@ -137,3 +137,23 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .register-container {
+    height: auto;  // Height auto kar dein taake scroll aaye agar zaroorat ho
+
+    .register-box {
+      flex-direction: column;  // Column me convert karo
+
+      .register-left {
+        display: none;  // Image wala section chhupa do mobile pe
+      }
+
+      .register-right {
+        flex: none;
+        width: 100%;       // Form full width le
+        padding: 20px 30px; // Thoda padding mobile ke liye
+        margin-top: 20px;
+      }
+    }
+  }
+}

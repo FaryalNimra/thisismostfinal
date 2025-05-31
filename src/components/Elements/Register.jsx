@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { FaGoogle, FaApple, FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
@@ -10,8 +10,31 @@ const Register = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [bgLoaded, setBgLoaded] = useState(false);
 
-  // ✅ Password validation function
+  const leftRef = useRef(null);
+
+  useEffect(() => {
+    // IntersectionObserver to lazy load background image
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setBgLoaded(true);
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: "100px", // preload just before it comes into viewport
+      }
+    );
+
+    if (leftRef.current) {
+      observer.observe(leftRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const validatePassword = (password) => {
     const minLength = /.{8,}/;
     const upperCase = /[A-Z]/;
@@ -31,7 +54,6 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    // ✅ Frontend password validation
     if (!validatePassword(password)) {
       Swal.fire({
         icon: "warning",
@@ -43,12 +65,15 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post("https://faryalnimra-newfake.hf.space/Register", {
-        firstName,
-        lastName,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://faryalnimra-newfake.hf.space/Register",
+        {
+          firstName,
+          lastName,
+          email,
+          password,
+        }
+      );
 
       Swal.fire({
         icon: "success",
@@ -76,11 +101,15 @@ const Register = () => {
       <div className="register-box">
         {/* Left Side */}
         <div
+          ref={leftRef}
           className="register-left"
           style={{
-            backgroundImage: "url('/assets/eye-4453129_1280.webp')",
+            backgroundImage: bgLoaded
+              ? "url('/assets/eye-4453129_1280.webp')"
+              : "none",
             backgroundSize: "cover",
             backgroundPosition: "center",
+            minHeight: "100%", // ensure visible area for intersection observer
           }}
         >
           <h2>Capturing Moments, <br /> Creating Memories</h2>
@@ -96,20 +125,20 @@ const Register = () => {
           <form className="register-form" onSubmit={handleRegister}>
             <div className="row">
               <div className="col-md-6">
-                <input 
-                  type="text" 
-                  placeholder="First Name" 
-                  className="form-control" 
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  className="form-control"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   required
                 />
               </div>
               <div className="col-md-6">
-                <input 
-                  type="text" 
-                  placeholder="Last Name" 
-                  className="form-control" 
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  className="form-control"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                   required
@@ -117,10 +146,10 @@ const Register = () => {
               </div>
             </div>
 
-            <input 
-              type="email" 
-              placeholder="Email" 
-              className="form-control mt-3" 
+            <input
+              type="email"
+              placeholder="Email"
+              className="form-control mt-3"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -147,7 +176,9 @@ const Register = () => {
               </label>
             </div>
 
-            <button type="submit" className="btn btn-primary w-100 mt-3">Create Account</button>
+            <button type="submit" className="btn btn-primary w-100 mt-3">
+              Create Account
+            </button>
           </form>
         </div>
       </div>
