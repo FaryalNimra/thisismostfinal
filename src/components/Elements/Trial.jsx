@@ -198,10 +198,7 @@ const Trial = () => {
                           {result.prediction || "N/A"}
                         </span>
                       </p>
-                      <p>
-                        <strong>Faces Detected:</strong>{" "}
-                        {result.faces_detected !== undefined ? result.faces_detected : "No data"}
-                      </p>
+                      
                     </>
                   ) : (
                     <>
