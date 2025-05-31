@@ -41,7 +41,7 @@ const Trial2 = () => {
     setHeatmapImageUrl("");
 
     try {
-      const response = await fetch("http://localhost:5000/generate_heatmap", {
+      const response = await fetch("https://faryalnimra-newfake.hf.space/generate_heatmap", {
         method: "POST",
         body: formData,
       });

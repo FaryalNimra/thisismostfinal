@@ -159,7 +159,6 @@ def allowed_file(filename):
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # Load your model
-deepfake_model = load_model_from_hf("faryalnimra/DFDC-detection-model", "DFDC.pth", 2)
 deepfake_model.eval()
 
 # Choose the last Conv2D layer
@@ -404,5 +403,5 @@ def contact():
     logging.info(f"Contact form submitted successfully from email: {email}")
     return jsonify({'message': 'Your message has been sent successfully.'}), 200
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=7860, debug=True)

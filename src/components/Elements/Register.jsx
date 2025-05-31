@@ -43,7 +43,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/Register", {
+      const response = await axios.post("https://faryalnimra-newfake.hf.space/Register", {
         firstName,
         lastName,
         email,

@@ -11,7 +11,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/Contact", {
+      const response = await axios.post("https://faryalnimra-newfake.hf.space/Contact", {
         email,
         query,
         message,

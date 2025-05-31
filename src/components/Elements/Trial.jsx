@@ -32,12 +32,13 @@ const Trial = () => {
     formData.append("prediction_type", predictionType);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/predict", {
+      const response = await fetch("https://faryalnimra-newfake.hf.space/predict", {
         method: "POST",
         body: formData,
       });
+
       const data = await response.json();
-      console.log("API Response:", data);  // <-- Log API response for debugging
+      console.log("API Response:", data);
       setResult(data);
     } catch (error) {
       console.error("Upload failed", error);
@@ -99,7 +100,6 @@ const Trial = () => {
           <h1 className="trial-heading">Image Forgery Detection</h1>
           <p className="trial-paragraph">Upload an image and choose detection type:</p>
 
-          {/* Dropdown for prediction type */}
           <div style={{ marginBottom: "20px" }}>
             <label htmlFor="prediction-type" style={{ fontWeight: "bold" }}>
               Prediction Type:
@@ -218,7 +218,7 @@ const Trial = () => {
                       <p>
                         <strong>Cheapfake Confidence:</strong> {result.cheapfake_confidence_adjusted}
                       </p>
-                       <p>
+                      <p>
                         <strong>Faces Detected:</strong>{" "}
                         {result.faces_detected !== undefined ? result.faces_detected : "No data"}
                       </p>
