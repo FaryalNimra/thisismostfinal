@@ -208,13 +208,19 @@ const Trial = () => {
                           {result.fake_type}
                         </span>
                       </p>
-                      <p>
-                        <strong>Deepfake Confidence:</strong>{" "}
-                        {Math.min(parseFloat(result.deepfake_confidence_adjusted), 99.5).toFixed(2)}%
-                      </p>
-                      <p>
-                        <strong>Cheapfake Confidence:</strong> {result.cheapfake_confidence_adjusted}
-                      </p>
+                     {result.fake_type === "deepfake" && (
+                        <p>
+                          <strong>Deepfake Confidence:</strong>{" "}
+                          {Math.min(parseFloat(result.deepfake_confidence_adjusted), 99.5).toFixed(2)}%
+                        </p>
+                      )}
+
+                      {result.fake_type === "cheapfake" && (
+                        <p>
+                          <strong>Cheapfake Confidence:</strong>{" "}
+                          {Math.min(parseFloat(result.cheapfake_confidence_adjusted), 99.5).toFixed(2)}%
+                        </p>
+                      )}
                       <p>
                         <strong>Faces Detected:</strong>{" "}
                         {result.faces_detected !== undefined ? result.faces_detected : "No data"}
