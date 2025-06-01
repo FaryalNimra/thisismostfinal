@@ -29,7 +29,7 @@ const teamData = [
     image: "/assets/Member3.webp",
     bgColor: "#e0f7fa",
     facebook: "https://www.facebook.com/profile.php?id=61574791244051",
-    linkedin: "www.linkedin.com/in/maham-nadeem-070275267",
+    linkedin: "https://www.linkedin.com/in/maham-nadeem-070275267",
   },
 ];
 
