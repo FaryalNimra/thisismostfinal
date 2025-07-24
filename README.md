@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# 🧠 Fake Catcher AI – Two in one Tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Fake Catcher AI** is a deep learning-based project developed as part of my Final Year Project. The system is designed to identify manipulated or fake images, particularly those altered using AI techniques like deepfakes and cheapfakes.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🎯 Project Overview
 
-### `npm start`
+The goal of this project is to:
+- Detect whether an image is real or fake  
+- Assist in the fight against digital misinformation  
+- Provide an interactive interface for real-time predictions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ⚙️ Key Features
 
-### `npm test`
+- Binary image classification (Real / Fake)  
+- Simple and fast image upload interface  
+- Real-time prediction feedback  
+- Backend support for prediction and result handling
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🔧 Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Python**  
+- **Deep Learning Libraries**  
+- **Image Processing Tools**  
+- **Frontend Interface** (using React js)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Usage
 
-### `npm run eject`
+Users can upload an image and receive immediate feedback on whether the system classifies it as *real* or *fake*. The interface is clean and user-friendly, allowing even non-technical users to interact with the model.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 👩‍💻 Author
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Faryal Nimra**  
+📧 [faryalnimra190@gmail.com](mailto:faryalnimra190@gmail.com)  
+🔗 [LinkedIn](https://linkedin.com/in/faryal-nimra-4a49a32b6)  
+🌐 [Portfolio](https://portfolio-five-beige-ixn8l41et7.vercel.app/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📝 Disclaimer
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This is an academic project created for learning and research purposes. The full implementation and datasets are not publicly disclosed due to privacy and research integrity reasons.
